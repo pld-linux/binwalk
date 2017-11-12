@@ -7,7 +7,7 @@ Name:		binwalk
 Version:	2.1.1
 Release:	3
 License:	MIT
-Group:		Applications/Development
+Group:		Development
 Source0:	https://github.com/devttys0/binwalk/archive/v%{version}.tar.gz
 # Source0-md5:	e5015a8d0eff287eda8c4afeeca89ed6
 URL:		https://github.com/devttys0/binwalk
@@ -15,8 +15,8 @@ URL:		https://github.com/devttys0/binwalk
 BuildRequires:	python3-modules
 BuildRequires:	python3-setuptools
 %endif
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Binwalk is a tool for searching a given binary image for embedded
@@ -38,7 +38,6 @@ kernels, bootloaders, filesystems, etc.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %py3_install
 
 %clean
