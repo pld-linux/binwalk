@@ -5,7 +5,7 @@
 Summary:	Binary image analyze tool
 Name:		binwalk
 Version:	2.1.1
-Release:	2
+Release:	3
 License:	MIT
 Group:		Applications/Development
 Source0:	https://github.com/devttys0/binwalk/archive/v%{version}.tar.gz
@@ -16,6 +16,7 @@ BuildRequires:	python3-modules
 BuildRequires:	python3-setuptools
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildArch:	noarch
 
 %description
 Binwalk is a tool for searching a given binary image for embedded
