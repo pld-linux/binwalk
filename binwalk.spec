@@ -4,12 +4,12 @@
 %define	module	binwalk
 Summary:	Binary image analyze tool
 Name:		binwalk
-Version:	2.1.1
-Release:	6
+Version:	2.3.3
+Release:	1
 License:	MIT
 Group:		Development
 Source0:	https://github.com/devttys0/binwalk/archive/v%{version}.tar.gz
-# Source0-md5:	e5015a8d0eff287eda8c4afeeca89ed6
+# Source0-md5:	6a7e53667b24f1cb92c29ec477cb4953
 URL:		https://github.com/devttys0/binwalk
 %if %{with python3}
 BuildRequires:	python3-modules
