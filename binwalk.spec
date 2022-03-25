@@ -5,7 +5,7 @@
 Summary:	Binary image analyze tool
 Name:		binwalk
 Version:	2.3.3
-Release:	2
+Release:	3
 License:	MIT
 Group:		Development
 Source0:	https://github.com/devttys0/binwalk/archive/v%{version}.tar.gz
