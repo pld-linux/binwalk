@@ -1,21 +1,20 @@
 # TODO:
 # - split library into subpackage?
 #
-%define	module	binwalk
 Summary:	Binary image analyze tool
 Summary(pl.UTF-8):	Narzędzie do analizy modułów binarnych
 Name:		binwalk
-Version:	2.3.3
-Release:	5
+Version:	2.3.4
+Release:	1
 License:	MIT
 Group:		Development
-Source0:	https://github.com/devttys0/binwalk/archive/v%{version}.tar.gz
-# Source0-md5:	6a7e53667b24f1cb92c29ec477cb4953
-URL:		https://github.com/devttys0/binwalk
-%if %{with python3}
-BuildRequires:	python3-modules
+#Source0Download: https://github.com/ReFirmLabs/binwalk/releases
+Source0:	https://github.com/ReFirmLabs/binwalk/archive/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	182a4e0d99600e30f06007910bcd037d
+URL:		https://github.com/ReFirmLabs/binwalk
+BuildRequires:	python3-modules >= 1:3.2
 BuildRequires:	python3-setuptools
-%endif
+BuildRequires:	rpm-pythonprov
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -48,10 +47,11 @@ nagłówki firmware'u, jądra Linuksa, bootloadery, systemy plików itp.
 %setup -q
 
 %build
-%py3_build %{?with_tests:test}
+%py3_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %py3_install
 
 %clean
@@ -61,5 +61,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc API.md README.md
 %attr(755,root,root) %{_bindir}/binwalk
-%{py3_sitescriptdir}/%{module}
-%{py3_sitescriptdir}/%{module}-%{version}-py*.egg-info
+%{py3_sitescriptdir}/binwalk
+%{py3_sitescriptdir}/binwalk-%{version}-py*.egg-info
